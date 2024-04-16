@@ -21,7 +21,7 @@ This Toy Store Management System is a Python program designed to simulate the op
 
 ### Usage
 
-1.	Run the `Main.py` file to start the program.
+1.	Run the >`Main.py` file to start the program.
 2.	Follow the on-screen prompts to perform various actions such as adding a kid, listing toys, letting a kid decide from the toy area, checking if a kid is playing with a toy, buying a toy from the store, or exiting the program.
 
 ### Dependencies
