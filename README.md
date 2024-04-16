@@ -17,7 +17,8 @@ This Toy Store Management System is a Python program designed to simulate the op
 - **toy.py**: Contains classes for different types of toys, including Toy, StuffedToy, and ElectronicToy.
 - **toyStore.py**: Implements classes for managing the toy area and toy store, including ToyArea and ToyStore.
 - **instance.py**: Contains toy_area and toy_store instances to be used in the main program.
-- **Main.py**: Implements the main program logic, allowing users to interact with the system.
+- **main.py**: Implements the main program logic.
+- **program.py**: Allowing users to interact with the system.
 
 ### Usage
 
