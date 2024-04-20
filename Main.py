@@ -1,5 +1,6 @@
 from kid import Kid  # Importing the Kid class from the kid.py module
 from instance import toy_area, toy_store  # Importing toy_area and toy_store from the instance.py module
+import re
 
 # Main program loop
 
@@ -17,11 +18,16 @@ def main():
         if choice == "1":
             # Option to add a new kid
             name = input("Enter kid's name: ")  # Prompting the user to enter the kid's name
-            kid = Kid(name)  # Creating a new Kid object with the entered name
-            print(f"Kid {name} added.")  # Printing a confirmation message
+            if re.match("^[a-zA-Z ]+$", name):  # Check if the input consists only of alphabetic characters
+                kid = Kid(name)  # Creating a new Kid object with the entered name
+                print(f"Kid {name} added.")  # Printing a confirmation message
+            else:
+                print("Please enter a valid name (letters only).")  # If the input is not valid, prompt the user again
+
         elif choice == "2":
             # Option to list toys in the toy area
             toy_area.list_toys()  # Calling the list_toys method of the toy_area instance to list the toys
+
         elif choice == "3":
             # Option for the kid to decide from the toy area
             if 'kid' not in locals():
@@ -30,6 +36,7 @@ def main():
             chosen_toy = kid.decide_from_toy(toy_area)  # Calling the decide_from_toy method of the kid instance
             if chosen_toy:
                 toy_area.take_toy(chosen_toy)  # Calling the take_toy method of the toy_area instance
+
         elif choice == "4":
             # Option to check if the kid is playing with a toy
             if 'kid' not in locals():
@@ -39,6 +46,7 @@ def main():
                 print(f"{kid.name} is playing.")  # Printing a message if the kid is playing
             else:
                 print(f"{kid.name} is not playing.")  # Printing a message if the kid is not playing
+
         elif choice == "5":
             # Option for the kid to buy a toy from the store
             if 'kid' not in locals():
